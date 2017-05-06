@@ -258,5 +258,30 @@ print(run_ttest())
 
 # In[ ]:
 
+def merge_sort(A):
+
+    if len(A) <= 1:
+
+        return A
+    
+    else:
+
+        length = len(A)/2
+
+        A = merge_sort(A[0:length])
+        B = merge_sort(A[length:])
+
+        C = []
+
+        while(len(A) > 0 and len(B) > 0):
+            
+            if A[0] >= B[0]:
+                C.append(A[0])
+                A = A[1:]
+            else:
+                C.append(B[0])
+                B = B[1:]
+
+        return C
 
 
